@@ -29,29 +29,17 @@
             <input name="definition" type="text" class="form-control" id="definition-input" placeholder="definition">
             <button type="submit" class="btn btn-default">Add Throw Word!</button>
         </form>
-        <!--<ul id="catchphrases">-->
-        <!--</ul>-->
-        <!--<div class="dropdown">-->
-            <!--<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"  aria-expanded="true">-->
-                <!--Dropdown-->
-                <!--<span class="caret"></span>-->
-            <!--</button>-->
-            <!--<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="catchphrases">-->
-                <!--<li><a href="#">Action</a></li>-->
-                <!--<li><a href="#">Another action</a></li>-->
-                <!--<li><a href="#">Something else here</a></li>-->
-                <!--<li><a href="#">Separated link</a></li>-->
-            <!--</ul>-->
-        <!--</div>-->
         <div class="container">
-            <!-- Example row of columns -->
             <div class="row">
                 <div class="span4 collapse-group">
                     <div class="container collapse">
                         <ul id="catchphrases">
                         </ul>
                     </div>
-                    <p><a class="btn">View Throw Words &raquo;</a></p>
+                    <div class="row">
+                        <p><a class="btn" id="view-throw-words">View Throw Words &#9652;</a><a type="button" class="btn" id="toggle-definitions">
+                            <span class="toggles">Definitions On &#9679;</span><span class="toggles" style="display: none">Definitions Off &#9675;</span></a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -66,10 +54,11 @@
 </div>
 <script type="text/template" id="cp-template">
     <li class="list-group-item">
-        <span class="label label-default"><%= word%></span>
-        <%= definition %>
-        <!-- button w/ registered onclick function -->
-        <button data-id="<%= _id %>" onclick="deletePhrase(this)" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span class="label label-default"><%= word %></span>
+        <div id="<%= word %>"><%= definition %>
+            <!-- button w/ registered onclick function -->
+            <button data-id="<%= _id %>" onclick="deletePhrase(this)" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
     </li>
 </script>
 </body>

@@ -1,14 +1,6 @@
 $(function() {
     pageLoad();
-    $('.row .btn').on('click', function(e) {
-        e.preventDefault();
-        var $this = $(this);
-        var $collapse = $this.closest('.collapse-group').find('.collapse');
-        $collapse.collapse('toggle');
-    });
-    $('#catchphrases').on('change', function() {
-        $('#catchphrases').css('overflow-y', 'scroll')
-    });
+
 });
 
 function pageLoad() {
@@ -16,6 +8,23 @@ function pageLoad() {
     getPhrases();
     //add new phrase
     addPhrase();
+
+    //Makes the element collapsible
+    $('#view-throw-words').on('click', function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var $collapse = $this.closest('.collapse-group').find('.collapse');
+        $collapse.collapse('toggle');
+    });
+
+    //makes a scroll for the catchphrases so it doesnt take up a lot of room
+    $('#catchphrases').on('change', function() {
+        $('#catchphrases').css('overflow-y', 'scroll')
+    });
+
+    //toggles the definitions off and on
+    //toggle definitions on is nested inside toggle off
+    toggleDefinitionsOff();
 }
 
 function getPhrases() {
@@ -79,8 +88,24 @@ function deletePhrase(context) {
     })
 }
 
-function toggleDefinition() {
-    console.log('toggled')
+function toggleDefinitionsOff() {
+    $('#toggle-definitions').click(function () {
+        words.forEach(function(e) {
+            $('#' + e).toggle('slow');
+        });
+        console.log('toggled');
+        $('.toggles').toggle();
+    });
+}
+
+function toggleDefinitionsOn() {
+    $('.btn.btn-default.showing').click(function () {
+        words.forEach(function(e) {
+            $('#' + e).fadeIn('slow');
+        });
+        console.log('toggled on')
+    });
+
 }
 
 function getRandomNum(min, max) {
