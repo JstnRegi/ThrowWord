@@ -1,0 +1,38 @@
+html, body, .container {
+    height: 100%
+}
+
+#title1 {
+    line-height: .3;
+    font-size: 150px;
+    padding-top: 40px;
+    margin-top: 100px;
+}
+
+#title2 {
+    font-size: 200px;
+}
+
+#word-container {
+    display: table;
+    vertical-align: middle;
+}
+
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#catchphrasecontainer {
+    height: 200px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+#catchphrases {
+    padding-right: 40px;
+}
+
+#new-phrase-form {
+    padding-left: 40px;
+}
