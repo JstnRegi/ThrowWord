@@ -1,10 +1,10 @@
-html, body, .container {
+html, body{
     height: 100% ;
 }
 
 .game-container {
     background-color: rgba(36, 138, 221, 0.68);
-    height: inherit;
+    height: 1000px;
     border-top: 1px solid black;
 }
 
@@ -32,10 +32,13 @@ html, body, .container {
     display: table;
     vertical-align: middle;
     margin-top: inherit;
+    top: 470px;
+    position: relative;
 }
 
 #word {
     background-color: silver;
+    height: 0px;
 }
 
 .vertical-center-row {
