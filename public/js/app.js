@@ -1,5 +1,14 @@
 $(function() {
     pageLoad();
+    $('.row .btn').on('click', function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var $collapse = $this.closest('.collapse-group').find('.collapse');
+        $collapse.collapse('toggle');
+    });
+    $('#catchphrases').on('change', function() {
+        $('#catchphrases').css('overflow-y', 'scroll')
+    });
 });
 
 function pageLoad() {
@@ -53,4 +62,6 @@ function deletePhrase(context) {
     })
 }
 
-//test
+function toggleDefinition() {
+    console.log('toggled')
+}
