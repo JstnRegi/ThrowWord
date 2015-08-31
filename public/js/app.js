@@ -1,5 +1,9 @@
 $(function() {
     pageLoad();
+    var seconds = 180;
+
+
+
 
 });
 
@@ -25,6 +29,21 @@ function pageLoad() {
     //toggles the definitions off and on
     //toggle definitions on is nested inside toggle off
     toggleDefinitionsOff();
+
+    $('#play-button').on('click', function() {
+        console.log('click');
+        $('#play-button').fadeOut('medium');
+            var countdownTimer = setInterval('secondPassed()', 1000);
+
+
+    });
+
+
+
+
+
+
+
 }
 
 function getPhrases() {
@@ -33,7 +52,7 @@ function getPhrases() {
         type: 'GET'
     }).done(function(req) {
         var catchphrases = req;
-        renderPhrases(req);
+        renderPhrases(catchphrases);
     });
 }
 
@@ -103,11 +122,35 @@ function toggleDefinitionsOn() {
         words.forEach(function(e) {
             $('#' + e).fadeIn('slow');
         });
-        console.log('toggled on')
     });
 
 }
 
+//random num to choose a random word
 function getRandomNum(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+//how many seconds the clock has
+var seconds = 5;
+var tick = 0;
+
+function secondPassed() {
+    var minutes = Math.round((seconds - 30)/60);
+    var remainingSeconds = seconds % 60;
+    tick++;
+
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;
+    }
+    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+    if (seconds == 0) {
+        document.getElementById('countdown').innerHTML = "Buzz Buzz";
+    } else {
+        seconds--;
+    }
+    if(tick === 1) {
+        $('#countdown').toggle('slow');
+    }
 }

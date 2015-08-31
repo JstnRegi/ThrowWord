@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Archivo+Narrow:700italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa:700' rel='stylesheet' type='text/css'>
     <!-- jQuery -->
     <script src="/vendor/jquery/dist/jquery.min.js"></script>
     <!-- Underscore -->
@@ -37,14 +39,54 @@
                         </ul>
                     </div>
                     <div class="row">
-                        <p><a class="btn" id="view-throw-words">View Throw Words &#9652;</a><a type="button" class="btn" id="toggle-definitions">
-                            <span class="toggles">Definitions On &#9679;</span><span class="toggles" style="display: none">Definitions Off &#9675;</span></a></p>
+                        <p><a class="btn important" id="view-throw-words">View Throw Words &#9652;</a><a type="button" class="btn" id="toggle-definitions">
+                            <span class="toggles important">Definitions On &#9679;</span><span class="toggles important" style="display: none">Definitions Off &#9675;</span></a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="col-lg-12 container" id="score-row">
+        <div class="col-md-6 text-center score">
+            <div id="score2"><p class="team-score">Team 1</p><br>
+                <div class="col-xs-6 text-right">
+                    <img class="greenthumb" src="http://www.clipartbest.com/cliparts/dT8/Kek/dT8Kek6Te.png">
+                </div>
+                <div class="col-xs-6 text-left">
+                    0
+                </div><br>
+                <div class="col-xs-6 text-right">
+                    <img class="redthumb" src="http://www.cliparthut.com/clip-arts/1526/red-thumbs-down-icon-1526417.png">
+                </div>
+                <div class="col-xs-6 text-left">
+                    0
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 text-center score">
+            <div id="score2"><p class="team-score" id="right-side-title">Team 2</p><br>
+                <div class="col-xs-6 text-right right-side">
+                    <img class="greenthumb" src="http://www.clipartbest.com/cliparts/dT8/Kek/dT8Kek6Te.png">
+                </div>
+                <div class="col-xs-6 text-left right-side">
+                    0
+                </div><br>
+                <div class="col-xs-6 text-right right-side">
+                    <img class="redthumb" src="http://www.cliparthut.com/clip-arts/1526/red-thumbs-down-icon-1526417.png">
+                </div>
+                <div class="col-xs-6 text-left right-side">
+                    0
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 container text-center">
+            <button class="btn btn-default" id="play-button">Play!</button>
+            <span id="countdown" class="timer" style="display: none"></span>
+        </div>
+    </div>
+
     <div class="container text-center" id="word-container">
+
         <div class ="row">
             <div class="col-lg-12 jumbotron" id="word">
             </div>
