@@ -117,11 +117,9 @@ div div.row p {
     font-size: 40px;
     color: white;
     background-color: rgba(6, 6, 6, 0.67);
-    right: 208px;
+    right: 27px;
     position: relative;
     border-radius: 3px;
-    top: 30px;
-    display: inline-block;
     width: 240px;
 }
 
@@ -129,11 +127,10 @@ div div.row p {
     font-size: 40px;
     color: white;
     background-color: rgba(6, 6, 6, 0.67);
-    right: 126px;
+    right: 15px;
     position: relative;
     border-radius: 3px;
-    top: 30px;
-    display: inline-block;
+    bottom: 45px;
     width: 240px;
 }
 
@@ -150,9 +147,9 @@ div div.row p {
 
 #play-button {
     font-family: 'Archivo Narrow', sans-serif;
-    width: 200px;
-    height: 100px;
-    bottom: 406px;
+    width: 150px;
+    height: 85px;
+    bottom: 110px;
     position: relative;
     font-size: 55px;
     -webkit-text-stroke-width: 2px;
@@ -179,6 +176,12 @@ div div.row p {
     right: 35px;
     position: relative;
     margin-bottom: -25px;
+}
+
+.score-num {
+    font-size: 115px;
+    bottom: 52px;
+    position: relative;
 }
 
 .clock {
@@ -230,5 +233,14 @@ div div.row p {
     font-size: 25px;
     font-family: 'Archivo Narrow', sans-serif;
     font-style: italic;
+}
+
+#countdown2-straightener {
+    width: 38%;
+}
+
+#timer-left-side {
+    bottom: 44px;
+    right: 35px;
 }
 

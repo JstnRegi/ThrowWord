@@ -1,6 +1,6 @@
 //how many seconds the clock has
-var seconds1 = 180;
-var seconds2 = 180;
+var seconds1 = 90;
+var seconds2 = 90;
 // for the sake of transition and to keep track when a second has passed to start the animation
 var tick = 0;
 
@@ -21,6 +21,9 @@ var team2ThumbsDown = 0;
 
 var countdownTimer1;
 var countdownTimer2;
+
+var teamOneScore = 0;
+var teamTwoScore = 0;
 
 
 $(function() {
