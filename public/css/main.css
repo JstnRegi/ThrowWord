@@ -28,24 +28,58 @@ html, body{
     margin-left: 200px;
 }
 
+.important {
+    color: rgb(238, 238, 238);
+}
+
+.toggles.important {
+    position: relative;
+    bottom: 5px;
+    display: inline;
+}
+
+#def-off {
+    position: relative;
+    bottom: 5px;
+}
+
+div div.row p {
+    background-color: #333333;
+}
+
 #word-container {
     display: table;
     vertical-align: middle;
     margin-top: inherit;
-    top: 350px;
+    top: 150px;
     position: relative;
+    left: 6px;
+    padding-top: 10px;
+    /*display: table;*/
+    /*vertical-align: middle;*/
+    /*margin-top: auto;*/
+    /*top: 1100px;*/
+    /*position: absolute;*/
+    /*padding-top: 100px;*/
+    /*left: 137px;*/
 }
 
-.important {
-    color: rgba(230, 11, 0, 0.94);
+#word-background {
+    background-color: silver;
+    padding-top: 30px;
 }
 
 #word {
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Play', sans-serif;
     font-size: 54px;
-    background-color: silver;
     padding-bottom: 0px;
     padding-top: 0px;
+    background-color: gray;
+    height: 80px;
+    width: 900px;
+    text-align: center;
+    margin-left: 125px;
+    position: relative;
 }
 
 #toggle-definitions {
@@ -69,26 +103,45 @@ html, body{
     height: 200px;
     overflow-y: scroll;
     padding-right: 40px;
+    margin-bottom: 0px;
 }
 
 #new-phrase-form {
-    padding-top: 50px;
-    border-bottom: 1px solid rgba(43, 57, 56, 0.39);
     margin-right: 30px;
     width: inherit;
-    padding-bottom: 10px;
+    padding-bottom: 3px;
 
 }
 
-#countdown {
-    font-size: 50px;
+#countdown1 {
+    font-size: 40px;
     color: white;
-    background-color: rgba(6, 6, 6, 0.72);
-    width: 200px;
+    background-color: rgba(6, 6, 6, 0.67);
+    right: 208px;
+    position: relative;
+    border-radius: 3px;
+    top: 30px;
+    display: inline-block;
+    width: 240px;
+}
+
+#countdown2 {
+    font-size: 40px;
+    color: white;
+    background-color: rgba(6, 6, 6, 0.67);
+    right: 126px;
+    position: relative;
+    border-radius: 3px;
+    top: 30px;
+    display: inline-block;
+    width: 240px;
 }
 
 #score-row {
-    top: 120px;
+    height: 240px;
+    margin-top: 157px;
+    padding-top: 0px;
+    bottom: 113px;
 }
 
 .score {
@@ -96,13 +149,16 @@ html, body{
 }
 
 #play-button {
+    font-family: 'Archivo Narrow', sans-serif;
     width: 200px;
     height: 100px;
-    font-family: 'Archivo Narrow', sans-serif;
+    bottom: 406px;
+    position: relative;
     font-size: 55px;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
     color: white;
+    z-index: 1;
 }
 
 .greenthumb {
@@ -119,16 +175,60 @@ html, body{
 
 .team-score {
     font-family: 'Roboto Slab', serif;
-    font-size: 70px;
+    font-size: 102px;
     right: 35px;
     position: relative;
     margin-bottom: -25px;
 }
 
+.clock {
+    position: initial;
+    margin-left: 20px;
+}
+
+
 #right-side-title {
-    left: 36px;
+    left: 47px;
 }
 
 .right-side {
     left: 68px;
 }
+
+.not-turn {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+.img-circle {
+    border: 1px solid rgba(0, 0, 0, 0.42);
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    top: -13px;
+    position: relative;
+}
+
+#small-throw {
+    font-size: 22px;
+    top: 22px;
+    position: relative;
+    right: 12px;
+    font-family: 'Archivo Narrow', sans-serif;
+    color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-style: italic;
+}
+
+#small-word {
+    position: relative;
+    /* top: 0px; */
+    left: 10px;
+    font-size: 25px;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-style: italic;
+}
+
