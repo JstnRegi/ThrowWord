@@ -39,7 +39,7 @@ app.delete('/catchphrases/:id', function(req, res) {
     db.CatchPhrase.remove({_id: target}, function(err, phrase) {
         if(err) {return console.log(err)}
         console.log(phrase + ' has been deleted');
-    })
+    });
     res.sendStatus(200);
 });
 

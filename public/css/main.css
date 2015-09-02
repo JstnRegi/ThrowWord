@@ -4,8 +4,20 @@ html, body{
 
 .game-container {
     background-color: rgba(36, 138, 221, 0.68);
-    height: 1000px;
+    height: 1300px;
     border-top: 1px solid black;
+    color: rgb(53, 51, 51);
+}
+
+#play {
+    background-color: rgb(255, 223, 160);
+    font-size: 22px;
+    position: relative;
+    left: 1275px;
+    top: 110px;
+    width: 120px;
+    height: 45px;
+    border: 0;
 }
 
 #title1 {
@@ -19,26 +31,74 @@ html, body{
     -webkit-text-stroke-width: 4px;
     -webkit-text-stroke-color: black;
     color: white;
+    top: 10px;
+    position: relative;
+    right: 100px;
+
 }
 
 #title2 {
     font-family: 'Archivo Narrow', sans-serif;
     font-style: italic;
-    font-size: 200px;
     margin-left: 200px;
+    height: 450px;
+    font-size: 324px;
+    top: 28px;
+    position: relative;
+}
+
+.important {
+    color: rgb(238, 238, 238);
+}
+
+.toggles.important {
+    position: relative;
+    bottom: 5px;
+    display: inline;
+}
+
+#def-off {
+    position: relative;
+    bottom: 5px;
+}
+
+div div.row p {
+    background-color: #333333;
 }
 
 #word-container {
     display: table;
     vertical-align: middle;
     margin-top: inherit;
-    top: 470px;
+    top: 150px;
     position: relative;
+    left: 6px;
+    padding-top: 10px;
+    /*display: table;*/
+    /*vertical-align: middle;*/
+    /*margin-top: auto;*/
+    /*top: 1100px;*/
+    /*position: absolute;*/
+    /*padding-top: 100px;*/
+    /*left: 137px;*/
+}
+
+#word-background {
+    background-color: silver;
+    padding-top: 30px;
 }
 
 #word {
-    background-color: silver;
-    height: 0px;
+    font-family: 'Play', sans-serif;
+    font-size: 54px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    background-color: gray;
+    height: 80px;
+    width: 900px;
+    text-align: center;
+    margin-left: 125px;
+    position: relative;
 }
 
 #toggle-definitions {
@@ -62,13 +122,144 @@ html, body{
     height: 200px;
     overflow-y: scroll;
     padding-right: 40px;
+    margin-bottom: 0px;
 }
 
 #new-phrase-form {
-    padding-top: 50px;
-    border-bottom: 1px solid rgba(43, 57, 56, 0.39);
     margin-right: 30px;
     width: inherit;
-    padding-bottom: 10px;
+    padding-bottom: 3px;
 
 }
+
+#countdown1 {
+    font-size: 40px;
+    color: white;
+    background-color: rgba(6, 6, 6, 0.67);
+    right: 27px;
+    position: relative;
+    border-radius: 3px;
+    width: 240px;
+}
+
+#countdown2 {
+    font-size: 40px;
+    color: white;
+    background-color: rgba(6, 6, 6, 0.67);
+    right: 15px;
+    position: relative;
+    border-radius: 3px;
+    bottom: 45px;
+    width: 240px;
+}
+
+#score-row {
+    height: 240px;
+    margin-top: 320px;
+    padding-top: 0px;
+    bottom: 113px;
+}
+
+.score {
+    font-size: 40px;
+}
+
+#play-button {
+    font-family: 'Archivo Narrow', sans-serif;
+    width: 150px;
+    height: 85px;
+    bottom: 110px;
+    position: relative;
+    font-size: 55px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    color: white;
+    z-index: 1;
+}
+
+.greenthumb {
+    width: 40px;
+    right: 70px;
+    position: relative;
+}
+
+.redthumb {
+    width: 52px;
+    right: 66px;
+    position: relative;
+}
+
+.team-score {
+    font-family: 'Roboto Slab', serif;
+    font-size: 102px;
+    right: 35px;
+    position: relative;
+    margin-bottom: -25px;
+}
+
+.score-num {
+    font-size: 115px;
+    bottom: 52px;
+    position: relative;
+}
+
+.clock {
+    position: initial;
+    margin-left: 20px;
+}
+
+
+#right-side-title {
+    left: 47px;
+}
+
+.right-side {
+    left: 68px;
+}
+
+.not-turn {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+.img-circle {
+    border: 1px solid rgba(0, 0, 0, 0.42);
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    top: -13px;
+    position: relative;
+}
+
+#small-throw {
+    font-size: 22px;
+    top: 22px;
+    position: relative;
+    right: 12px;
+    font-family: 'Archivo Narrow', sans-serif;
+    color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-style: italic;
+}
+
+#small-word {
+    position: relative;
+    /* top: 0px; */
+    left: 10px;
+    font-size: 25px;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-style: italic;
+}
+
+#countdown2-straightener {
+    width: 38%;
+}
+
+#timer-left-side {
+    bottom: 44px;
+    right: 35px;
+}
+

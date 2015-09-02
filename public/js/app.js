@@ -1,7 +1,37 @@
+//how many seconds the clock has
+var seconds1 = 60;
+var seconds2 = 60;
+// for the sake of transition and to keep track when a second has passed to start the animation
+var tick = 0;
+
+//keypress values
+var yKey = 121;
+var nKey = 110;
+var enterKey = 13;
+
+//variables that keeps track who who's team it is
+var teamTurn = 1;
+var colorTicker = 1;
+
+//variables that keep track of score
+var team1ThumbsUp = 0;
+var team1ThumbsDown = 0;
+var team2ThumbsUp = 0;
+var team2ThumbsDown = 0;
+
+var countdownTimer1;
+var countdownTimer2;
+
+var teamOneScore = 0;
+var teamTwoScore = 0;
+
+
 $(function() {
     pageLoad();
 
 });
+
+
 
 function pageLoad() {
     //load phrases
@@ -25,6 +55,33 @@ function pageLoad() {
     //toggles the definitions off and on
     //toggle definitions on is nested inside toggle off
     toggleDefinitionsOff();
+
+    $('#play-button').on('click', function() {
+        $('#score1').addClass('team-turn');
+        console.log('click');
+        $('#play-button').fadeOut('medium');
+            countdownTimer1 = setInterval('secondPassed1()', 1000);
+            countdownTimer2 = setInterval('secondPassed2()', 1000);
+    });
+
+    teamsTurn();
+    blinker();
+
+
+    //listens for an event to click play button and scrolls to the "play screen"
+    $("#play").click(function() {
+        scrollToAnchor('stop-here');
+    });
+    //makes play button fade in and out
+    playBlinker();
+    //signals when the user is hovering over the button to signify it's clickable
+    $('#play').hover(function() {
+        $('#play').css('background-color', '#E4CB99').css('border', '1px solid black');
+    }, function() {
+        $('#play').css('background-color', 'rgb(255, 223, 160)').css('border', '');
+    })
+
+
 }
 
 function getPhrases() {
@@ -33,7 +90,7 @@ function getPhrases() {
         type: 'GET'
     }).done(function(req) {
         var catchphrases = req;
-        renderPhrases(req);
+        renderPhrases(catchphrases);
     });
 }
 
@@ -103,11 +160,151 @@ function toggleDefinitionsOn() {
         words.forEach(function(e) {
             $('#' + e).fadeIn('slow');
         });
-        console.log('toggled on')
     });
 
 }
 
+//random num to choose a random word
 function getRandomNum(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+function secondPassed1() {
+
+    var minutes = Math.round((seconds1 - 30)/60);
+    var remainingSeconds = seconds1 % 60;
+    tick++;
+
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;
+    }
+    document.getElementById('countdown1').innerHTML = minutes + ":" + remainingSeconds;
+    if (seconds1 == 0) {
+
+        document.getElementById('countdown1').innerHTML = "Buzz Buzz";
+    } else {
+        seconds1--;
+    }
+    if(tick === 1) {
+        $('#countdown1').toggle('slow');
+    }
+
+}
+
+function secondPassed2() {
+    console.log('running');
+    var minutes = Math.round((seconds2 - 30)/60);
+    var remainingSeconds = seconds2 % 60;
+
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;
+    }
+    document.getElementById('countdown2').innerHTML = minutes + ":" + remainingSeconds;
+    if (seconds2 == 0) {
+        document.getElementById('countdown2').innerHTML = "Buzz Buzz";
+    } else {
+        seconds2--;
+    }
+    if(tick === 1) {
+        $('#countdown2').toggle('slow', function(){
+            window.clearInterval(countdownTimer2);
+        });
+    }
+}
+
+function teamsTurn() {
+    var team1Pass = 0;
+    var team2Pass = 0;
+    $(window).on('keypress', function(e) {
+        if(e.which === enterKey) {
+            $('#score1').toggleClass('team-turn');
+            if(teamTurn % 2 !== 0) {
+                $('#score1').css('-webkit-text-stroke-width', '0px');
+                countdownTimer2 = setInterval('secondPassed2()', 1000);
+                keepScore('#team-one-score');
+                window.clearInterval(countdownTimer1);
+                team1Pass = 0;
+            }
+            $('#right-side-title').toggleClass('team-turn');
+            if(teamTurn % 2 === 0) {
+                $('#right-side-title').css('-webkit-text-stroke-width', '0px');
+                countdownTimer1 = setInterval('secondPassed1()', 1000);
+                keepScore('#team-two-score');
+                window.clearInterval(countdownTimer2);
+                team2Pass = 0;
+            }
+            teamTurn ++;
+        }
+        if(e.which === 112) {
+            $('#score1').toggleClass('team-turn');
+            if(teamTurn % 2 !== 0) {
+                $('#score1').css('-webkit-text-stroke-width', '0px');
+                countdownTimer2 = setInterval('secondPassed2()', 1000);
+                window.clearInterval(countdownTimer1);
+                team1Pass++;
+            }
+            $('#right-side-title').toggleClass('team-turn');
+            if(teamTurn % 2 === 0) {
+                $('#right-side-title').css('-webkit-text-stroke-width', '0px');
+                countdownTimer1 = setInterval('secondPassed1()', 1000);
+                window.clearInterval(countdownTimer2);
+                team2Pass++;
+            }
+            if(team1Pass === 1 && team2Pass === 1) {
+                console.log('next word');
+                team1Pass = 0;
+                team2Pass = 0;
+            }
+            teamTurn ++;
+        }
+
+    })
+}
+
+//Adds an effect around teams turn when it's their turn
+function blinker() {
+        setInterval(function() {
+            colorTicker += 1;
+            if (colorTicker % 2 === 0) {
+                $('.team-turn').css('-webkit-text-stroke-color', 'yellow').css('-webkit-text-stroke-width', '1px');
+            }
+            if (colorTicker % 2 !== 0) {
+                $('.team-turn').css('-webkit-text-stroke-color', '')
+            }
+        }, 400)
+}
+
+function keepScore(team) {
+    $(team).empty();
+    if(team === '#team-one-score') {
+        teamOneScore += 1;
+        $(team).append(teamOneScore);
+    }
+    if(team === '#team-two-score') {
+        teamTwoScore += 1;
+        $(team).append(teamTwoScore);
+    }
+}
+
+function winner() {
+    if(seconds1 == 0) {
+        console.log('check');
+        if(seconds1 > seconds2) {
+            alert('Team 1 wins');
+        }
+    }
+}
+
+function scrollToAnchor(aid){
+    var aTag = $("a[name='"+ aid +"']");
+    $('html,body').animate({
+        scrollTop: aTag.offset().top},2000);
+}
+
+function playBlinker() {
+    setInterval(function () {
+        $('#play').fadeOut(800);
+        $('#play').fadeIn(600);
+    }, 500);
 }
