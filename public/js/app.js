@@ -1,6 +1,6 @@
 //how many seconds the clock has
-var seconds1 = 90;
-var seconds2 = 90;
+var seconds1 = 60;
+var seconds2 = 60;
 // for the sake of transition and to keep track when a second has passed to start the animation
 var tick = 0;
 
@@ -66,6 +66,22 @@ function pageLoad() {
 
     teamsTurn();
     blinker();
+
+
+    //listens for an event to click play button and scrolls to the "play screen"
+    $("#play").click(function() {
+        scrollToAnchor('stop-here');
+    });
+    //makes play button fade in and out
+    playBlinker();
+    //signals when the user is hovering over the button to signify it's clickable
+    $('#play').hover(function() {
+        $('#play').css('background-color', '#E4CB99').css('border', '1px solid black');
+    }, function() {
+        $('#play').css('background-color', 'rgb(255, 223, 160)').css('border', '');
+    })
+
+
 }
 
 function getPhrases() {
@@ -165,6 +181,7 @@ function secondPassed1() {
     }
     document.getElementById('countdown1').innerHTML = minutes + ":" + remainingSeconds;
     if (seconds1 == 0) {
+
         document.getElementById('countdown1').innerHTML = "Buzz Buzz";
     } else {
         seconds1--;
@@ -172,6 +189,7 @@ function secondPassed1() {
     if(tick === 1) {
         $('#countdown1').toggle('slow');
     }
+
 }
 
 function secondPassed2() {
@@ -196,22 +214,51 @@ function secondPassed2() {
 }
 
 function teamsTurn() {
+    var team1Pass = 0;
+    var team2Pass = 0;
     $(window).on('keypress', function(e) {
         if(e.which === enterKey) {
             $('#score1').toggleClass('team-turn');
             if(teamTurn % 2 !== 0) {
                 $('#score1').css('-webkit-text-stroke-width', '0px');
                 countdownTimer2 = setInterval('secondPassed2()', 1000);
+                keepScore('#team-one-score');
                 window.clearInterval(countdownTimer1);
+                team1Pass = 0;
+            }
+            $('#right-side-title').toggleClass('team-turn');
+            if(teamTurn % 2 === 0) {
+                $('#right-side-title').css('-webkit-text-stroke-width', '0px');
+                countdownTimer1 = setInterval('secondPassed1()', 1000);
+                keepScore('#team-two-score');
+                window.clearInterval(countdownTimer2);
+                team2Pass = 0;
+            }
+            teamTurn ++;
+        }
+        if(e.which === 112) {
+            $('#score1').toggleClass('team-turn');
+            if(teamTurn % 2 !== 0) {
+                $('#score1').css('-webkit-text-stroke-width', '0px');
+                countdownTimer2 = setInterval('secondPassed2()', 1000);
+                window.clearInterval(countdownTimer1);
+                team1Pass++;
             }
             $('#right-side-title').toggleClass('team-turn');
             if(teamTurn % 2 === 0) {
                 $('#right-side-title').css('-webkit-text-stroke-width', '0px');
                 countdownTimer1 = setInterval('secondPassed1()', 1000);
                 window.clearInterval(countdownTimer2);
+                team2Pass++;
+            }
+            if(team1Pass === 1 && team2Pass === 1) {
+                console.log('next word');
+                team1Pass = 0;
+                team2Pass = 0;
             }
             teamTurn ++;
         }
+
     })
 }
 
@@ -226,4 +273,38 @@ function blinker() {
                 $('.team-turn').css('-webkit-text-stroke-color', '')
             }
         }, 400)
+}
+
+function keepScore(team) {
+    $(team).empty();
+    if(team === '#team-one-score') {
+        teamOneScore += 1;
+        $(team).append(teamOneScore);
+    }
+    if(team === '#team-two-score') {
+        teamTwoScore += 1;
+        $(team).append(teamTwoScore);
+    }
+}
+
+function winner() {
+    if(seconds1 == 0) {
+        console.log('check');
+        if(seconds1 > seconds2) {
+            alert('Team 1 wins');
+        }
+    }
+}
+
+function scrollToAnchor(aid){
+    var aTag = $("a[name='"+ aid +"']");
+    $('html,body').animate({
+        scrollTop: aTag.offset().top},2000);
+}
+
+function playBlinker() {
+    setInterval(function () {
+        $('#play').fadeOut(800);
+        $('#play').fadeIn(600);
+    }, 500);
 }
