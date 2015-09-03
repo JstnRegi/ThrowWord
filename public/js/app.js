@@ -62,8 +62,9 @@ function pageLoad() {
     $('#play-button').on('click', function() {
         $('#score1').addClass('team-turn');
         console.log('click');
-        $('#play-button').fadeOut('medium');
+        $(this).fadeOut('medium');
             gameStart++;
+        $('#instructions').css('z-index', '-1');
             countdownTimer1 = setInterval('secondPassed1()', 1000);
             countdownTimer2 = setInterval('secondPassed2()', 1000);
     });
