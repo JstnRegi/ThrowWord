@@ -69,18 +69,10 @@ div div.row p {
 #word-container {
     display: table;
     vertical-align: middle;
-    margin-top: inherit;
-    top: 150px;
+    bottom: 360px;
     position: relative;
     left: 6px;
     padding-top: 10px;
-    /*display: table;*/
-    /*vertical-align: middle;*/
-    /*margin-top: auto;*/
-    /*top: 1100px;*/
-    /*position: absolute;*/
-    /*padding-top: 100px;*/
-    /*left: 137px;*/
 }
 
 #word-background {
@@ -132,6 +124,16 @@ div div.row p {
 
 }
 
+#instructions {
+    background-color: #F5F3F3;
+    border: 1px solid black;
+    z-index: 4;
+    top: 150px;
+    position: relative;
+    width: 900px;
+}
+}
+
 #countdown1 {
     font-size: 40px;
     color: white;
@@ -157,7 +159,7 @@ div div.row p {
     height: 240px;
     margin-top: 320px;
     padding-top: 0px;
-    bottom: 113px;
+    bottom: 600px;
 }
 
 .score {
@@ -166,15 +168,16 @@ div div.row p {
 
 #play-button {
     font-family: 'Archivo Narrow', sans-serif;
-    width: 150px;
-    height: 85px;
-    bottom: 110px;
+    width: 155px;
+    height: 60px;
+    bottom: 0px;
     position: relative;
-    font-size: 55px;
-    -webkit-text-stroke-width: 2px;
+    font-size: 31px;
     -webkit-text-stroke-color: black;
-    color: white;
-    z-index: 1;
+    background-color: #43b515;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .greenthumb {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Throw Word</title><button class="btn btn-default" id="play">Play!</button>
+    <title>Throw Words</title><button class="btn btn-default" id="play">Play!</button>
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,13 +24,8 @@
 </head>
 <body>
 <div class="text-center" id="title1">THROW</div>
-<h1 class="text-center" id="title2">WORD</h1>
+<h1 class="text-center" id="title2">WORDS</h1>
 <div class="container" id="catchphrasecontainer">
-    <form class="form-inline text-center" id="new-phrase-form">
-        <input name="word" type="text" class="form-control" id="word-input" placeholder="word">
-        <input name="definition" type="text" class="form-control" id="definition-input" placeholder="definition">
-        <button type="submit" class="btn btn-default">Add Throw Word!</button>
-    </form>
     <div class="container">
         <div class="row">
             <div class="span4 collapse-group">
@@ -44,11 +39,42 @@
                 </div>
             </div>
         </div>
+        <form class="form-inline text-center" id="new-phrase-form">
+            <input name="word" type="text" class="form-control" id="word-input" placeholder="word">
+            <input name="definition" type="text" class="form-control" id="definition-input" placeholder="definition">
+            <button type="submit" class="btn btn-default">Add Throw Word!</button>
+        </form>
     </div>
 </div>
 
+
+
 <a name="stop-here"/>
 <div class="game-container">
+    <div class="container" id="instructions">
+        <h2>Objective Of The Game</h2><br>
+        <p>Guess more Throw Words than your opposing team before both timers run out!</p>
+        <h2>How To Play</h2><br>
+        <p>Every turn a team will have a <b>guesser</b>. If your guesser says the Throw Word press ENTER to get the <b>point</b>. It will then be the other teams turn.
+            The guesser will now <u>quickly</u> rotate with another member of their team, and will be they will be the guesser of their next turn.
+            The <u>guesser</u> can opt to <b>pass</b> in order pause their team's timer. <u>However,</u> the other team
+            has the chance to get the <b>point</b>. In the event both team's guessers pass <b>consecutively</b>, neither team will get the point and
+            the next Throw Word will appear on screen.</p>
+        <h2>Rules of the game</h2><br><br>
+        <p>Team's can guess <u>as long as time is on their clock</u>. If a team's clock has reached 0, the other team may keep guessing until their clock has
+            run out as well, or simply choose to pass and end the game. Team's describing the Throw Word® may <b>not</b> say things along the lines of, "It rhymes with..." and "It sounds like...".
+            Teams may charade individually or as one team if they wish. Keep it fair. House rules are welcome.</p>
+
+        <h2>The winner</h2>
+
+        <p>The winner of the game is whoever has the <b>most points</b> when both team's clocks reach 0.</p>
+
+        put a ready button at the end of the instructions div
+
+        <div class="col-lg-12 container text-center">
+            <button class="btn btn-default" id="play-button">Ready</button>
+        </div>
+    </div>
     <div class="col-lg-12 container" id="score-row">
         <div class="img-circle"><p id="small-throw">Throw</p><p id="small-word">Word</p></div>
         <div class="col-md-6 text-center score">
@@ -91,9 +117,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-12 container text-center">
-            <button class="btn btn-default" id="play-button">Play!</button>
-        </div>
+
     </div>
     <div class="container text-center" id="word-container">
         <div class ="row" id="word-background">
