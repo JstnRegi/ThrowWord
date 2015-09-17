@@ -118,6 +118,11 @@ div div.row p {
     margin-bottom: 0px;
 }
 
+span.label.label-default {
+    background-color: rgb(255, 223, 160);
+    color: gray;
+}
+
 #new-phrase-form {
     margin-right: 30px;
     width: inherit;
@@ -265,5 +270,9 @@ div div.row p {
 #timer-left-side {
     bottom: 44px;
     right: 35px;
+}
+
+.list-group-item {
+    height: 60px;
 }
 

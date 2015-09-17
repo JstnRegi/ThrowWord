@@ -1,6 +1,6 @@
 //how many seconds the clock has
-var seconds1 = 5;
-var seconds2 = 5;
+var seconds1 = 120;
+var seconds2 = 120;
 // for the sake of transition and to keep track when a second has passed to start the animation
 var tick = 0;
 
@@ -25,13 +25,14 @@ var countdownTimer2;
 var teamOneScore = 0;
 var teamTwoScore = 0;
 
+var shuffledWords;
+
 //counter that keeps certain event listeners on and off
 var gameStart = 0;
 
 
 $(function() {
     pageLoad();
-
 });
 
 
@@ -67,6 +68,9 @@ function pageLoad() {
         $('#instructions').css('z-index', '-1');
             countdownTimer1 = setInterval('secondPassed1()', 1000);
             countdownTimer2 = setInterval('secondPassed2()', 1000);
+
+        //appends a word into #word element
+        $('#word').append(words[phraseCount]);
     });
 
 
@@ -78,14 +82,13 @@ function pageLoad() {
         scrollToAnchor('stop-here');
     });
     //makes play button fade in and out
-    //playBlinker();
+    playBlinker();
     //signals when the user is hovering over the button to signify it's clickable
     $('#play').hover(function() {
         $('#play').css('background-color', '#E4CB99').css('border', '1px solid black');
     }, function() {
         $('#play').css('background-color', 'rgb(255, 223, 160)').css('border', '');
     })
-
 
 }
 
@@ -113,6 +116,8 @@ function renderPhrases(cps) {
         return template(e);
     });
 
+    shuffledWords = shuffle(words);
+
     //empties out the element so it isnt overloaded with catchphrases
     $('#catchphrases').empty();
     //appends he cpList with map
@@ -121,8 +126,11 @@ function renderPhrases(cps) {
     //gets a random number between 0 and the last of the index of the array
     var randomNum = getRandomNum(0, (words.length - 1));
 
-    //appends a word into #word element
-    $('#word').append(words[phraseCount]);
+}
+
+function shuffle(o){
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
 }
 
 function addPhrase() {
@@ -255,7 +263,6 @@ function teamsTurn() {
     var team2Pass = 0;
     $(window).on('keypress', function(e) {
         if(gameStart === 1) {
-
             if(e.which === enterKey) {
                 $('#score1').toggleClass('team-turn');
                 if(teamTurn % 2 !== 0) {
@@ -322,7 +329,7 @@ function blinker() {
         setInterval(function() {
             colorTicker += 1;
             if (colorTicker % 2 === 0) {
-                $('.team-turn').css('-webkit-text-stroke-color', 'yellow').css('-webkit-text-stroke-width', '1px');
+                $('.team-turn').css('-webkit-text-stroke-color', 'yellow').css('-webkit-text-stroke-width', '3px');
             }
             if (colorTicker % 2 !== 0) {
                 $('.team-turn').css('-webkit-text-stroke-color', '')
@@ -375,7 +382,18 @@ function playBlinker() {
 var phraseCount = 0;
 function nextPhrase () {
     phraseCount++;
-    $('#word').empty().append(words[phraseCount]);
-
-
+    $('#word').empty().append(shuffledWords[phraseCount]);
+    if(phraseCount === shuffledWords.length) {
+        if(teamOneScore > teamTwoScore) {
+            alert('Team one has won!');
+        }
+        else if(teamOneScore === teamTwoScore) {
+            alert('Game\'s a tie!');
+        } else {
+            alert('Team two has won!');
+        }
+        gameStart++;
+        window.clearInterval(countdownTimer1);
+        window.clearInterval(countdownTimer2);
+    }
 }
