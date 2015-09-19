@@ -13,12 +13,6 @@ var enterKey = 13;
 var teamTurn = 1;
 var colorTicker = 1;
 
-//variables that keep track of score
-var team1ThumbsUp = 0;
-var team1ThumbsDown = 0;
-var team2ThumbsUp = 0;
-var team2ThumbsDown = 0;
-
 var countdownTimer1;
 var countdownTimer2;
 

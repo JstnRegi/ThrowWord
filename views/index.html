@@ -76,49 +76,53 @@
             <button class="btn btn-default" id="play-button">Ready</button>
         </div>
     </div>
-    <div class="col-lg-12 container" id="score-row">
-        <div class="img-circle"><p id="small-throw">Throw</p><p id="small-word">Word</p></div>
-        <div class="col-md-6 text-center score">
-            <div><p id="score1" class="team-score">Team 1</p><br>
-                <div class="col-xs-3 text-left">
-                </div>
-                <div class="col-xs-3 text-right score-num" id="team-one-score">
-                    0
-                </div>
-                <div class="col-xs-3 text-left">
-                </div>
-            </div><br>
-            <div class="col-md-12" id="timer-left-side">
-                <div class="col-md-4">
-                </div>
-                <div class="col-md-4 clock">
-                    <span id="countdown1" class="timer" style="display: none"></span>
-                </div>
-                <div class="col-md-4">
+    <div class="container">
+        <div class="col-sm-12" id="score-row">
+            <div class="img-circle"><p id="small-throw">Throw</p><p id="small-word">Word</p></div>
+            <div class="col-xs-6 text-center score">
+                <div>
+                    <p id="score1" class="team-score">Team 1</p><br>
+                    <div class="col-sm-4 text-left">
+                    </div>
+                    <div class="col-sm-4 text-right score-num" id="team-one-score">
+                        0
+                    </div>
+                    <div class="col-sm-4 text-left">
+                    </div>
+                </div><br>
+                <div class="col-md-12" id="timer-left-side">
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-4 clock">
+                        <span id="countdown1" class="timer" style="display: none"></span>
+                    </div>
+                    <div class="col-sm-4">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6 text-center score">
-            <div><p class="team-score" id="right-side-title">Team 2</p><br>
-                <div class="col-xs-3 text-left">
-                </div>
-                <div class="col-xs-3 text-right score-num">
-                </div>
-                <div class="col-xs-3 text-left score-num" id="team-two-score">
-                    0
-                </div>
-            </div><br>
-            <div class="col-md-12">
-                <div class="col-md-4" id="countdown2-straightener">
-                </div>
-                <div class="col-md-4 clock">
-                    <span id="countdown2" class="timer" style="display: none"></span>
-                </div>
-                <div class="col-md-4">
+            <div class="col-md-6 text-center score">
+                <div><p class="team-score" id="right-side-title">Team 2</p><br>
+                    <div class="col-xs-3 text-left">
+                    </div>
+                    <div class="col-xs-3 text-right score-num">
+                    </div>
+                    <div class="col-xs-3 text-left score-num" id="team-two-score">
+                        0
+                    </div>
+                </div><br>
+                <div class="col-md-12">
+                    <div class="col-md-4" id="countdown2-straightener">
+                    </div>
+                    <div class="col-md-4 clock">
+                        <span id="countdown2" class="timer" style="display: none"></span>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="container text-center" id="word-container">
         <div class ="row" id="word-background">
             <div class="col-lg-12 jumbotron" id="word">
@@ -126,6 +130,8 @@
         </div>
     </div>
 </div>
+
+
 <script type="text/template" id="cp-template">
     <li class="list-group-item">
         <span class="label label-default"><%= word %></span>
