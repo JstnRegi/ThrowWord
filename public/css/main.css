@@ -30,7 +30,7 @@ html, body{
     margin-top: 100px;
     margin-right: 400px;
     -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: #333333;
     color: white;
     top: 10px;
     position: relative;
@@ -42,6 +42,7 @@ html, body{
     font-family: 'Archivo Narrow', sans-serif;
     font-style: italic;
     margin-left: 200px;
+    color: #333333;
     height: 450px;
     font-size: 324px;
     top: 28px;
@@ -63,14 +64,11 @@ html, body{
     bottom: 5px;
 }
 
-div div.row p {
-    background-color: #333333;
-}
+
 
 #word-container {
     display: table;
-    vertical-align: middle;
-    bottom: 360px;
+    bottom: 200px;
     position: relative;
     left: 6px;
     padding-top: 10px;
@@ -170,6 +168,7 @@ span.label.label-default {
 
 .score {
     font-size: 40px;
+
 }
 
 #play-button {
@@ -201,9 +200,7 @@ span.label.label-default {
 .team-score {
     font-family: 'Roboto Slab', serif;
     font-size: 102px;
-    right: 35px;
-    position: relative;
-    margin-bottom: -25px;
+    width: 425px;
 }
 
 .score-num {
@@ -267,12 +264,16 @@ span.label.label-default {
     width: 38%;
 }
 
-#timer-left-side {
-    bottom: 44px;
-    right: 35px;
-}
+/*#timer-left-side {*/
+    /*bottom: 44px;*/
+    /*right: 35px;*/
+/*}*/
 
 .list-group-item {
     height: 60px;
+}
+
+.black-background {
+    background-color: #333333;
 }
 

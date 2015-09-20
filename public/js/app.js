@@ -68,7 +68,7 @@ function pageLoad() {
     });
 
 
-    blinker();
+    //blinker();
 
 
     //listens for an event to click play button and scrolls to the "play screen"
@@ -76,7 +76,7 @@ function pageLoad() {
         scrollToAnchor('stop-here');
     });
     //makes play button fade in and out
-    playBlinker();
+    //playBlinker();
     //signals when the user is hovering over the button to signify it's clickable
     $('#play').hover(function() {
         $('#play').css('background-color', '#E4CB99').css('border', '1px solid black');
