@@ -77,19 +77,20 @@ html, body{
 #word-background {
     background-color: silver;
     padding-top: 30px;
+    width: 100%;
+    padding-bottom: 30px;
+    border-radius: 10px;
 }
 
 #word {
     font-family: 'Play', sans-serif;
     font-size: 54px;
-    padding-bottom: 0px;
-    padding-top: 0px;
     background-color: gray;
     height: 80px;
-    width: 900px;
+    width: 80%;
     text-align: center;
-    margin-left: 125px;
     position: relative;
+    margin: 0 auto 0;
 }
 
 #toggle-definitions {
