@@ -69,8 +69,8 @@ html, body{
 #word-container {
     display: table;
     bottom: 200px;
+    width: 100%;
     position: relative;
-    left: 6px;
     padding-top: 10px;
 }
 
@@ -166,9 +166,28 @@ span.label.label-default {
     bottom: 600px;
 }
 
+#scoreboard-wrapper {
+    height: 400px;
+    /*width: 800px;*/
+    position: relative;
+    margin: 0 auto 0;
+}
+
+#left-wrapper {
+    position: relative;
+    margin: 0 auto 0;
+    float: left;
+}
+
+#right-wrapper {
+    position: relative;
+    margin: 0 auto 0;
+    float: right;
+}
+
 .score {
     font-size: 40px;
-
+    width: 396px;
 }
 
 #play-button {
@@ -200,13 +219,13 @@ span.label.label-default {
 .team-score {
     font-family: 'Roboto Slab', serif;
     font-size: 102px;
-    width: 425px;
+    margin-bottom: 220px;
 }
 
 .score-num {
     font-size: 115px;
-    bottom: 52px;
-    position: relative;
+    /*bottom: 52px;*/
+    /*position: relative;*/
 }
 
 .clock {
@@ -275,5 +294,32 @@ span.label.label-default {
 
 .black-background {
     background-color: #333333;
+}
+
+@media (max-width: 992px) {
+    #left-wrapper {
+        float: none;
+    }
+
+    #right-wrapper {
+        float: none;
+    }
+
+    #team-one-score {
+        font-size: 60px;
+    }
+
+    #team-two-score {
+        font-size: 60px;
+    }
+
+    .team-score {
+        font-size: 60px;
+    }
+
+    #word-container {
+        float: none;
+        top: 600px;
+    }
 }
 

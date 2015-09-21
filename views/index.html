@@ -81,39 +81,33 @@
     <div class="container">
         <div class="row" id="score-row">
             <div class="img-circle"><p id="small-throw">Throw</p><p id="small-word">Word</p></div>
-            <div class="col-xs-6 text-center score">
-                    <p id="score1" class="team-score">Team 1</p><br>
-                    <div class="score-num" id="team-one-score">
-                        0
+                <div class="container">
+                    <div id="scoreboard-wrapper" class="row">
+                        <div id="left-wrapper" class="col-xs-6 text-center score">
+                            <p id="score1" class="team-score">
+                                Team 1
+                                <br>
+                        <span class="score-num" id="team-one-score">
+                            0
+                        </span>
+                            </p>
+                            <br>
+                            <span id="countdown1" class="timer" style="display: none"></span>
+                        </div>
+                        <div id="right-wrapper" class="col-xs-6 text-center score">
+                            <p id="score2" class="team-score">
+                                Team 2
+                                <br>
+                            <span class="score-num" id="team-two-score">
+                                0
+                            </span>
+                            </p>
+                            <br>
+                            <span id="countdown2" class="timer" style="display: none"></span>
+                        </div>
                     </div>
-                <br>
-                <!--<div class="col-xs-12" id="timer-left-side">-->
-                    <!--<div class="col-sm-4 clock">-->
-                        <span id="countdown1" class="timer" style="display: none"></span>
-                    <!--</div>-->
-                <!--</div>-->
+                </div>
             </div>
-            <!--<div class="col-xs-6 text-center score">-->
-                <!--<div><p class="team-score" id="right-side-title">Team 2</p><br>-->
-                    <!--<div class="col-xs-3 text-left">-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 text-right score-num">-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 text-left score-num" id="team-two-score">-->
-                        <!--0-->
-                    <!--</div>-->
-                <!--</div><br>-->
-                <!--<div class="col-md-12">-->
-                    <!--<div class="col-md-4" id="countdown2-straightener">-->
-                    <!--</div>-->
-                    <!--<div class="col-md-4 clock">-->
-                        <!--<span id="countdown2" class="timer" style="display: none"></span>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-4">-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        </div>
         <div class="text-center" id="word-container">
             <div class ="row" id="word-background">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 jumbotron" id="word">
@@ -121,8 +115,6 @@
             </div>
         </div>
     </div>
-
-
 </div>
 
 

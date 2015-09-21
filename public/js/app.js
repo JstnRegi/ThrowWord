@@ -192,7 +192,7 @@ function secondPassed1() {
     if(seconds1 === 0) {
         winner();
         $('#score1').css('-webkit-text-stroke-width', '0px');
-        $('#right-side-title').css('-webkit-text-stroke-width', '0px');
+        $('#score2').css('-webkit-text-stroke-width', '0px');
     }
 
     if ((seconds1 === 0) && (seconds2 > 0)) {
@@ -200,7 +200,7 @@ function secondPassed1() {
         document.getElementById('countdown1').innerHTML = "Buzz Buzz";
         $('#score1').toggleClass('team-turn');
         $('#score1').css('-webkit-text-stroke-width', '0px');
-        $('#right-side-title').toggleClass('team-turn');
+        $('#score2').toggleClass('team-turn');
         countdownTimer2 = setInterval('secondPassed2()', 1000);
         window.clearInterval(countdownTimer1);
         teamTurn++;
@@ -228,14 +228,14 @@ function secondPassed2() {
     if(seconds2 === 0) {
         winner();
         $('#score1').css('-webkit-text-stroke-width', '0px');
-        $('#right-side-title').css('-webkit-text-stroke-width', '0px');
+        $('#score2').css('-webkit-text-stroke-width', '0px');
     }
 
     if ((seconds2 == 0) && (seconds1 > 0)) {
         document.getElementById('countdown2').innerHTML = "Buzz Buzz";
         winner();
-        $('#right-side-title').toggleClass('team-turn');
-        $('#right-side-title').css('-webkit-text-stroke-width', '0px');
+        $('#score2').toggleClass('team-turn');
+        $('#score2').css('-webkit-text-stroke-width', '0px');
         $('#score1').toggleClass('team-turn');
         countdownTimer1 = setInterval('secondPassed1()', 1000);
         window.clearInterval(countdownTimer2);
@@ -269,7 +269,7 @@ function teamsTurn() {
                 }
                 $('#right-side-title').toggleClass('team-turn');
                 if(teamTurn % 2 === 0) {
-                    $('#right-side-title').css('-webkit-text-stroke-width', '0px');
+                    $('#score2').css('-webkit-text-stroke-width', '0px');
                     countdownTimer1 = setInterval('secondPassed1()', 1000);
                     keepScore('#team-two-score');
                     nextPhrase();
@@ -289,9 +289,9 @@ function teamsTurn() {
                     window.clearInterval(countdownTimer1);
                     team1Pass++;
                 }
-                $('#right-side-title').toggleClass('team-turn');
+                $('#score2').toggleClass('team-turn');
                 if(teamTurn % 2 === 0) {
-                    $('#right-side-title').css('-webkit-text-stroke-width', '0px');
+                    $('#score2').css('-webkit-text-stroke-width', '0px');
                     countdownTimer1 = setInterval('secondPassed1()', 1000);
                     window.clearInterval(countdownTimer2);
                     team2Pass++;
