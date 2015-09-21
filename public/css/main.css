@@ -2,7 +2,7 @@ html, body{
     height: 100% ;
 }
 
-.game-container {
+#game-wrapper {
     background-color: rgb(116, 186, 243);
     height: 1300px;
     border-top: 1px solid black;
@@ -80,6 +80,7 @@ html, body{
     width: 100%;
     padding-bottom: 30px;
     border-radius: 10px;
+    margin: 0;
 }
 
 #word {
@@ -297,13 +298,23 @@ span.label.label-default {
     background-color: #333333;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 960px) {
+    #game-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 794px) {
+
     #left-wrapper {
         float: none;
+        height: 310px;
+        margin-top: 40px;
     }
 
     #right-wrapper {
         float: none;
+        height: 310px;
     }
 
     #team-one-score {

@@ -53,7 +53,7 @@
     <a name="stop-here"></a>
 </div>
 
-<div class="game-container">
+<div id="game-wrapper">
     <!--<div class="container" id="instructions">-->
         <!--<h2>Objective Of The Game</h2><br>-->
         <!--<p>Guess more Throw Words® than your opposing team before both timers run out!</p>-->
@@ -78,10 +78,10 @@
             <!--<button class="btn btn-default" id="play-button">Ready</button>-->
         <!--</div>-->
     <!--</div>-->
-    <div class="container">
+    <div id="game-container" class="container">
         <div class="row" id="score-row">
             <div class="img-circle"><p id="small-throw">Throw</p><p id="small-word">Word</p></div>
-                <div class="container">
+                <!--<div class="container">-->
                     <div id="scoreboard-wrapper" class="row">
                         <div id="left-wrapper" class="col-xs-6 text-center score">
                             <p id="score1" class="team-score">
@@ -106,11 +106,11 @@
                             <span id="countdown2" class="timer" style="display: none"></span>
                         </div>
                     </div>
-                </div>
+                <!--</div>-->
             </div>
         <div class="text-center" id="word-container">
             <div class ="row" id="word-background">
-                <div class="jumbotron" id="word">
+                <div id="word">
                 </div>
             </div>
         </div>
