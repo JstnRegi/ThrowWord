@@ -54,30 +54,36 @@
 </div>
 
 <div id="game-wrapper">
-    <!--<div class="container" id="instructions">-->
-        <!--<h2>Objective Of The Game</h2><br>-->
-        <!--<p>Guess more Throw Words® than your opposing team before both timers run out!</p>-->
-        <!--<h2>How To Play</h2><br>-->
-        <!--<p>Every turn a team will have a <b>guesser</b>. If your guesser says the Throw Word® press ENTER to get the <b>point</b>. It will then be the other teams turn.-->
-            <!--The guesser will now <u>quickly</u> rotate with another member of their team, and will be they will be the guesser of their next turn.-->
-            <!--The <u>guesser</u> can opt to <b>pass</b> in order pause their team's timer. <u>However,</u> the other team-->
-            <!--has the chance to get the <b>point</b>. In the event both team's guessers pass <b>consecutively</b>, neither team will get the point and-->
-            <!--the next Throw Word® will appear on screen.</p>-->
-        <!--<h2>Rules of the game</h2><br><br>-->
-        <!--<p>Team's can guess <b>as long as their is on their clock</b>. If a team's clock has reached 0, the other team may keep guessing until their clock has-->
-            <!--run out as well, or simply choose to pass and end the game. Team's describing the Throw Word® may <b>not</b> say things along the lines of, "It rhymes with..." and "It sounds like...".-->
-            <!--Teams may charade individually or as one team if they wish. Keep it fair. House rules are welcome.</p>-->
 
-        <!--<h2>The winner</h2>-->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+    <div class="modal fade bs-example-modal-lg in" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: block">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="container" id="instructions">
+                    <h2>Objective Of The Game</h2><br>
+                    <p>Guess more Throw Words® than your opposing team before both timers run out!</p>
+                    <h2>How To Play</h2><br>
+                    <p>Every turn a team will have a <b>guesser</b>. If your guesser says the Throw Word® press ENTER to get the <b>point</b>. It will then be the other teams turn.
+                        The guesser will now <u>quickly</u> rotate with another member of their team, and will be they will be the guesser of their next turn.
+                        The <u>guesser</u> can opt to <b>pass</b> in order pause their team's timer. <u>However,</u> the other team
+                        has the chance to get the <b>point</b>. In the event both team's guessers pass <b>consecutively</b>, neither team will get the point and
+                        the next Throw Word® will appear on screen.</p>
+                    <h2>Rules of the game</h2><br><br>
+                    <p>Team's can guess <b>as long as their is on their clock</b>. If a team's clock has reached 0, the other team may keep guessing until their clock has
+                        run out as well, or simply choose to pass and end the game. Team's describing the Throw Word® may <b>not</b> say things along the lines of, "It rhymes with..." and "It sounds like...".
+                        Teams may charade individually or as one team if they wish. Keep it fair. House rules are welcome.</p>
 
-        <!--<p>The winner of the game is whoever has the <b>most points</b> when both team's clocks reach 0.</p>-->
+                    <h2>The winner</h2>
 
-        <!--put a ready button at the end of the instructions div-->
+                    <p>The winner of the game is whoever has the <b>most points</b> when both team's clocks reach 0.</p>
 
-        <!--<div class="col-lg-12 container text-center">-->
-            <!--<button class="btn btn-default" id="play-button">Ready</button>-->
-        <!--</div>-->
-    <!--</div>-->
+                    <div class="row text-center">
+                        <button class="btn btn-default" id="play-button">Ready</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="game-container" class="container">
         <div class="row" id="score-row">
             <div class="img-circle"><p id="small-throw">Throw</p><p id="small-word">Word</p></div>

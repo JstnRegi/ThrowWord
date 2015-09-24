@@ -64,7 +64,10 @@ html, body{
     bottom: 5px;
 }
 
-
+.modal {
+    position: absolute;
+    top: 100%;
+}
 
 #word-container {
     display: table;
