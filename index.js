@@ -6,6 +6,8 @@ var _ = require('underscore');
 var views = path.join(process.cwd(), 'views/');
 var db = require('./models');
 
+//test
+
 // CONFIG //
 // serve js & css files
 app.use("/static", express.static("public"));
