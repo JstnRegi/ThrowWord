@@ -35,14 +35,13 @@
                     </ul>
                 </div>
                 <div class="row">
-                    <p  class="black-background"><a class="btn important" id="view-throw-words">View Throw Words &#9652;</a><a type="button" class="btn" id="toggle-definitions">
-                        <span class="toggles important">Definitions On &#9679;</span><span class="toggles important" id="def-off" style="display: none">Definitions Off &#9675;</span></a></p>
+                    <p  class="black-background"><a class="btn important" id="view-throw-words">View Throw Words &#9652;</a>
+                     </p>
                 </div>
             </div>
         </div>
         <form class="form-inline text-center" id="new-phrase-form">
             <input name="word" type="text" class="form-control" id="word-input" placeholder="word">
-            <input name="definition" type="text" class="form-control" id="definition-input" placeholder="definition">
             <button type="submit" class="btn btn-default">Add Throw Word!</button>
         </form>
     </div>
@@ -126,7 +125,7 @@
 <script type="text/template" id="cp-template">
     <li class="list-group-item">
         <span class="label label-default"><%= word %></span>
-        <div id="<%= word %>"><%= definition %>
+        <div id="<%= word %>">
             <!-- button w/ registered onclick function -->
             <button data-id="<%= _id %>" onclick="deletePhrase(this)" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
