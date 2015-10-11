@@ -1,6 +1,6 @@
 //how many seconds the clock has
-var seconds1 = 120;
-var seconds2 = 120;
+var seconds1 = 1200;
+var seconds2 = 1200;
 // for the sake of transition and to keep track when a second has passed to start the animation
 var tick = 0;
 
@@ -54,17 +54,19 @@ function pageLoad() {
     //toggle definitions on is nested inside toggle off
     toggleDefinitionsOff();
 
-    $('#play-button').on('click', function() {
+    $('#ready-button').on('click', function() {
         $('#score1').addClass('team-turn');
         console.log('click');
         $(this).fadeOut('medium');
             gameStart++;
-        $('#instructions').css('z-index', '-1');
+        $('#instructions').fadeOut(function() {
             countdownTimer1 = setInterval('secondPassed1()', 1000);
             countdownTimer2 = setInterval('secondPassed2()', 1000);
 
         //appends a word into #word element
         $('#word').append(words[phraseCount]);
+        });
+            
     });
 
 
