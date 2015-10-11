@@ -6,10 +6,6 @@ var CatchPhraseSchema = new Schema( {
     word: {
         type: String,
         required: true
-    },
-    definition: {
-        type: String,
-        required: true
     }
 });
 
