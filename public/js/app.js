@@ -50,9 +50,7 @@ function pageLoad() {
         $('#catchphrases').css('overflow-y', 'scroll')
     });
 
-    //toggles the definitions off and on
-    //toggle definitions on is nested inside toggle off
-    toggleDefinitionsOff();
+
 
     $('#ready-button').on('click', function() {
         $('#score1').addClass('team-turn');
@@ -99,10 +97,8 @@ function getPhrases() {
 }
 
 var words = [];
-var definitions = [];
 function renderPhrases(cps) {
     //resets the arrays so they dont get overloaded every addition or removal of catchphrase
-    definitions = [];
 
     //makes the template out of our ul
     var template = _.template($('#cp-template').html());
@@ -151,25 +147,6 @@ function deletePhrase(context) {
     }).done(function(req,res) {
         getPhrases();
     })
-}
-
-function toggleDefinitionsOff() {
-    $('#toggle-definitions').click(function () {
-        words.forEach(function(e) {
-            $('#' + e).toggle('slow');
-        });
-        console.log('toggled');
-        $('.toggles').toggle();
-    });
-}
-
-function toggleDefinitionsOn() {
-    $('.btn.btn-default.showing').click(function () {
-        words.forEach(function(e) {
-            $('#' + e).fadeIn('slow');
-        });
-    });
-
 }
 
 //random num to choose a random word
@@ -392,3 +369,5 @@ function nextPhrase () {
         window.clearInterval(countdownTimer2);
     }
 }
+
+function 
