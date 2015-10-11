@@ -20,9 +20,9 @@ app.get('/', function(req,res) {
 });
 
 app.get('/catchphrases', function(req, res) {
-    db.CatchPhrase.find({}, function(err, catchPhrase) {
+    db.CatchPhrase.find({}, function(err, catchPhrases) {
         if (err) {return console.log(err)}
-        res.send(catchPhrase);
+        res.send(catchPhrases);
     });
 });
 
