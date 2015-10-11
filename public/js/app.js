@@ -102,7 +102,6 @@ var words = [];
 var definitions = [];
 function renderPhrases(cps) {
     //resets the arrays so they dont get overloaded every addition or removal of catchphrase
-    words = [];
     definitions = [];
 
     //makes the template out of our ul
