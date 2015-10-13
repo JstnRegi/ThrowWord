@@ -1,6 +1,6 @@
 //how many seconds the clock has
-var seconds1 = 1200;
-var seconds2 = 1200;
+var seconds1 = 10;
+var seconds2 = 10;
 // for the sake of transition and to keep track when a second has passed to start the animation
 var tick = 0;
 
@@ -25,6 +25,8 @@ var shuffledWords;
 var gameStart = 0;
 
 
+
+
 $(function() {
     pageLoad();
 });
@@ -34,6 +36,7 @@ $(function() {
 function pageLoad() {
     //load phrases
     getPhrases();
+
     //add new phrase
     addPhrase();
 
@@ -62,7 +65,8 @@ function pageLoad() {
             countdownTimer2 = setInterval('secondPassed2()', 1000);
 
         //appends a word into #word element
-        $('#word').append(words[phraseCount]);
+        $('#word').append(throwWord);
+        // console.log(throwWord);
         });
             
     });
@@ -106,8 +110,10 @@ function renderPhrases(cps) {
         words.push(e.word);
         return template(e);
     });
-
     shuffledWords = shuffle(words);
+    throwWord = shuffledWords[phraseCount];
+
+    
 
     //empties out the element so it isnt overloaded with catchphrases
     $('#catchphrases').empty();
@@ -168,7 +174,6 @@ function secondPassed1() {
     document.getElementById('countdown1').innerHTML = minutes + ":" + remainingSeconds;
 
     if(seconds1 === 0) {
-        winner();
         $('#score1').css('-webkit-text-stroke-width', '0px');
         $('#score2').css('-webkit-text-stroke-width', '0px');
     }
@@ -234,6 +239,8 @@ function teamsTurn() {
     var team1Pass = 0;
     var team2Pass = 0;
     $(window).on('keypress', function(e) {
+        guessedWordsList(throwWord);
+        console.log(guessedWords);
         if(gameStart === 1) {
             if(e.which === enterKey) {
                 $('#score1').toggleClass('team-turn');
@@ -241,6 +248,7 @@ function teamsTurn() {
                     $('#score1').css('-webkit-text-stroke-width', '0px');
                     countdownTimer2 = setInterval('secondPassed2()', 1000);
                     keepScore('#team-one-score');
+                    
                     nextPhrase();
                     window.clearInterval(countdownTimer1);
                     team1Pass = 0;
@@ -250,6 +258,7 @@ function teamsTurn() {
                     $('#score2').css('-webkit-text-stroke-width', '0px');
                     countdownTimer1 = setInterval('secondPassed1()', 1000);
                     keepScore('#team-two-score');
+                    
                     nextPhrase();
                     window.clearInterval(countdownTimer2);
                     team2Pass = 0;
@@ -279,15 +288,6 @@ function teamsTurn() {
                     team1Pass = 0;
                     team2Pass = 0;
                 }
-                //if((seconds1 === 0) || (seconds2 === 0)) {
-                //    if(teamOneScore > teamTwoScore) {
-                //        alert('Team One won!');
-                //    } else {
-                //        alert('Team Two won!');
-                //    }
-                //    window.clearInterval(countdownTimer1);
-                //    window.clearInterval(countdownTimer2);
-                //}
                 if((seconds1 > 0) && (seconds2 > 0)) {
                     teamTurn ++;
                 }
@@ -352,9 +352,11 @@ function playBlinker() {
 
 
 var phraseCount = 0;
+var throwWord;
 function nextPhrase () {
     phraseCount++;
-    $('#word').empty().append(shuffledWords[phraseCount]);
+    throwWord = shuffledWords[phraseCount];
+    $('#word').empty().append(throwWord);
     if(phraseCount === shuffledWords.length) {
         if(teamOneScore > teamTwoScore) {
             alert('Team one has won!');
@@ -370,4 +372,7 @@ function nextPhrase () {
     }
 }
 
-function 
+var guessedWords = [];
+function guessedWordsList(guessedWord) {
+    guessedWords.push(guessedWord);
+}
