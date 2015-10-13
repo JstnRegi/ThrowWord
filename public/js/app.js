@@ -240,7 +240,6 @@ function teamsTurn() {
     var team2Pass = 0;
     $(window).on('keypress', function(e) {
         guessedWordsList(throwWord);
-        console.log(guessedWords);
         if(gameStart === 1) {
             if(e.which === enterKey) {
                 $('#score1').toggleClass('team-turn');
