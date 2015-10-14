@@ -1,0 +1,29 @@
+How do I implement a db?
+	Clarifications on identity of game?
+		A user can play a Quick Match where they use their builtin playlist and they can add words until minimum amount of words are met
+		A user can click if they want words to be automatically deleted if the word is guessed correctly, or not be deleted
+
+What a game should be.
+
+A gamemode can be chosen
+	Quick Matches
+	Rule Rounds
+
+
+A quick match ends when the time ends for both sides
+	- In order to play another quick round, the list of words must at least be as long as many players x 3
+	- The following Quick Match played uses the words from last round that was not used
+	- Game maker can decide on best of many rounds the teams will play
+	- Save a Quick Match playlist for the user?
+		- As long as minimum requirement is met
+	- Give game maker a chance on to use old words or use a previous one
+
+A game
+	Asks for
+		How many people are playing
+			For people's names
+		How many seconds each team gets on their clock
+		How many rounds to play
+			Until words run out
+		How many
+	Randomly splits people playing into two teams
