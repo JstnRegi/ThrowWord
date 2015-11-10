@@ -57,7 +57,7 @@ function pageLoad() {
 
     $('#ready-button').on('click', function() {
         $('#score1').addClass('team-turn');
-        console.log('click');
+        // console.log('click');
         $(this).fadeOut('medium');
             gameStart++;
         $('#instructions').fadeOut(function() {
@@ -165,7 +165,6 @@ function secondPassed1() {
 
     var minutes = Math.round((seconds1 - 30)/60);
     var remainingSeconds = seconds1 % 60;
-    tick++;
 
     if (remainingSeconds < 10) {
         remainingSeconds = "0" + remainingSeconds;
@@ -192,14 +191,18 @@ function secondPassed1() {
         seconds1--;
     }
 
+    tick++;
+
     if(tick === 1) {
-        $('#countdown1').toggle('slow');
+        $('#countdown1').toggle('slow',function() {
+            tick++;
+        });
     }
 
 }
 
 function secondPassed2() {
-    console.log('running');
+    // console.log('running');
     var minutes = Math.round((seconds2 - 30)/60);
     var remainingSeconds = seconds2 % 60;
 
@@ -230,7 +233,9 @@ function secondPassed2() {
     if(tick === 1) {
         $('#countdown2').toggle('slow', function(){
             window.clearInterval(countdownTimer2);
-            teamsTurn();
+            if(tick > 1) {
+                teamsTurn();
+            }
         });
     }
 }
@@ -252,7 +257,7 @@ function teamsTurn() {
                     window.clearInterval(countdownTimer1);
                     team1Pass = 0;
                 }
-                $('#right-side-title').toggleClass('team-turn');
+                $('#score2').toggleClass('team-turn');
                 if(teamTurn % 2 === 0) {
                     $('#score2').css('-webkit-text-stroke-width', '0px');
                     countdownTimer1 = setInterval('secondPassed1()', 1000);
