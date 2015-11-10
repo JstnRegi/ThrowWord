@@ -6,7 +6,7 @@ var _ = require('underscore');
 var views = path.join(process.cwd(), 'views/');
 var db = require('./models');
 
-//test
+var port = process.env.PORT || 3000;
 
 // CONFIG //
 // serve js & css files
@@ -45,6 +45,6 @@ app.delete('/catchphrases/:id', function(req, res) {
     res.sendStatus(200);
 });
 
-app.listen(3000, function() {
-    console.log('Listening on port 3000');
+app.listen(port, function() {
+    console.log("There's free food at port " + port);
 });

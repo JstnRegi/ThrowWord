@@ -1,6 +1,6 @@
 //how many seconds the clock has
-var seconds1 = 10;
-var seconds2 = 10;
+var seconds1 = 90;
+var seconds2 = 90;
 // for the sake of transition and to keep track when a second has passed to start the animation
 var tick = 0;
 
@@ -72,7 +72,7 @@ function pageLoad() {
     });
 
 
-    //blinker();
+    blinker();
 
 
     //listens for an event to click play button and scrolls to the "play screen"
@@ -80,7 +80,7 @@ function pageLoad() {
         scrollToAnchor('stop-here');
     });
     //makes play button fade in and out
-    //playBlinker();
+    // playBlinker();
     //signals when the user is hovering over the button to signify it's clickable
     $('#play').hover(function() {
         $('#play').css('background-color', '#E4CB99').css('border', '1px solid black');

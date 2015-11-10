@@ -14,7 +14,7 @@ html, body{
     background-color: rgb(255, 223, 160);
     font-size: 22px;
     position: relative;
-    left: 1275px;
+    left: 80vw;
     top: 110px;
     width: 120px;
     height: 45px;
@@ -25,28 +25,62 @@ html, body{
     font-family: 'Archivo Narrow', sans-serif;
     font-style: italic;
     line-height: .3;
-    font-size: 100px;
+    font-size: 6vw;
     padding-top: 40px;
     margin-top: 100px;
     margin-right: 400px;
     -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: #333333;
+    -webkit-text-stroke-color: black;
     color: white;
     top: 10px;
     position: relative;
     right: 100px;
-
 }
 
 #title2 {
     font-family: 'Archivo Narrow', sans-serif;
     font-style: italic;
     margin-left: 200px;
-    color: #333333;
     height: 450px;
-    font-size: 324px;
+    font-size: 18vw;
     top: 28px;
     position: relative;
+}
+
+@media screen and (max-width: 992px) {
+    #title1 {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-style: italic;
+        line-height: .3;
+        font-size: 100px;
+        padding-top: 40px;
+        margin-top: 0px;
+        margin-right: 0px;
+        text-align: center;
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: black;
+        color: white;
+        top: 10px;
+        position: relative;
+        right: 0px;
+    }
+
+    #title2 {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-style: italic;
+        margin-left: 0px;
+        text-align: center;
+        font-size: 200px;
+        height: auto;
+        top: 28px;
+        position: relative;
+    }
+}
+
+li.list-group-item {
+    font-family: 'Source Sans Pro';
+    font-weight: 900;
+    text-align: center;
 }
 
 .important {
